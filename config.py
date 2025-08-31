@@ -20,9 +20,9 @@ listening_port = 8081
 # This is used to calculate a cost estimate before a run. It's also used
 # to produce the actual cost during a run. My kiln has three
 # elements that when my switches are set to high, consume 9460 watts.
-kwh_rate        = 1.6  # cost per kilowatt hour per currency_type to calculate cost to run job
-kw_elements     = 7.3 # if the kiln elements are on, the wattage in kilowatts
-currency_type   = "kr"   # Currency Symbol to show when calculating cost to run job
+kwh_rate        = 0.1319  # cost per kilowatt hour per currency_type to calculate cost to run job
+kw_elements     = 9.460 # if the kiln elements are on, the wattage in kilowatts
+currency_type   = "$"   # Currency Symbol to show when calculating cost to run job
 
 ########################################################################
 #
@@ -149,9 +149,9 @@ sensor_time_wait = 2
 # well with the simulated oven. You must tune them to work well with 
 # your specific kiln. Note that the integral pid_ki is
 # inverted so that a smaller number means more integral action.
-pid_kp = 9.044738632122836   # Proportional 25,200,200
-pid_ki = 14.245288572837554   # Integral
-pid_kd = 291.3421380094641 # Derivative
+pid_kp = 10   # Proportional 25,200,200
+pid_ki = 80   # Integral
+pid_kd = 220.83497910261562 # Derivative
 
 ########################################################################
 #
@@ -164,7 +164,7 @@ stop_integral_windup = True
 ########################################################################
 #
 #   Simulation parameters
-simulate = False
+simulate = True
 sim_t_env      = 65   # deg
 sim_c_heat     = 500.0  # J/K  heat capacity of heat element
 sim_c_oven     = 5000.0 # J/K  heat capacity of oven
@@ -185,7 +185,7 @@ sim_speedup_factor = 1
 #
 # If you change the temp_scale, all settings in this file are assumed to
 # be in that scale.
-temp_scale          = "c" # c = Celsius | f = Fahrenheit - Unit to display
+temp_scale          = "f" # c = Celsius | f = Fahrenheit - Unit to display
 time_scale_slope    = "h" # s = Seconds | m = Minutes | h = Hours - Slope displayed in temp_scale per time_scale_slope
 time_scale_profile  = "m" # s = Seconds | m = Minutes | h = Hours - Enter and view target time in time_scale_profile
 
